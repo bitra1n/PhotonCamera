@@ -1371,7 +1371,9 @@ fun CameraScreen(
                             Image(
                                 bitmap = previewBitmap.asImageBitmap(),
                                 contentDescription = null,
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .autoRotate(matchParentSize = true),
                                 alpha = 0.45f,
                                 contentScale = ContentScale.Crop
                             )

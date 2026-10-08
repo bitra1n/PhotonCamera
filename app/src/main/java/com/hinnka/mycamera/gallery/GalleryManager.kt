@@ -2833,6 +2833,11 @@ object GalleryManager {
             } else {
                 previewBitmap
             }
+            PLog.d(
+                TAG,
+                "Multiple exposure frame=$frameIndex session=$sessionId rotation=$rotation " +
+                    "mirror=$shouldMirror output=${finalBitmap.width}x${finalBitmap.height}"
+            )
             FileOutputStream(frameFile).use { outputStream ->
                 finalBitmap.compress(Bitmap.CompressFormat.JPEG, photoQuality, outputStream)
             }

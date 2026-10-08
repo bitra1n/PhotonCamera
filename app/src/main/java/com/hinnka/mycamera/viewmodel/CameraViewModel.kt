@@ -3271,9 +3271,9 @@ class CameraViewModel(application: Application) : AndroidViewModel(application) 
 
                 val photoId = GalleryManager.preparePhoto(
                     context,
+                    // preparePhoto derives output dimensions from the sensor dimensions and rotation.
+                    // The composed bitmap has already been cropped and rotated once.
                     baseMetadata.copy(
-                        width = composedBitmap.width,
-                        height = composedBitmap.height,
                         captureMode = "multiple_exposure",
                         multipleExposureFrameCount = multipleExposureState.capturedCount
                     ),
